@@ -689,9 +689,8 @@ st.markdown("""
 
     <div style="text-align: center; font-size: 13px; color: #666; font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;">
         <p style="margin-bottom: 4px;">
-            © 2025 許家瑋｜國立成功大學 測量及空間資訊學系｜指導老師：吳治達 教授<br>
-            聯絡信箱：<a href="mailto:p68111509@gs.ncku.edu.tw">p68111509@gs.ncku.edu.tw</a>｜GitHub 專案：
-            <a href="https://github.com/p68111509/low-exposure-routing_demo" target="_blank">low-exposure-routing_demo</a>
+            © 2025 許家瑋<br>
+            聯絡信箱：<a href="mailto:p68111509@gs.ncku.edu.tw">p68111509@gs.ncku.edu.tw</a>
         </p>
         <p style="margin-top: 6px; margin-bottom: 0px;">
             本系統資料與分析目的僅供學術與教育參考，部分 PM2.5 空間資訊參考自環境部公開資料。
@@ -702,3 +701,5 @@ st.markdown("""
         </p>
     </div>
 """, unsafe_allow_html=True)
+
+# © 2025 許家瑋 林侑萱 林宇家｜國立成功大學 測量及空間資訊學系｜指導老師：吳治達 教授
