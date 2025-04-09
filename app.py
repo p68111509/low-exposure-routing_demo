@@ -622,84 +622,22 @@ with col3:
 
 
 
-# # ======== 加入右下角名字＋兩張 logo =========
-# def get_image_base64(path):
-#     with open(path, "rb") as img_file:
-#         encoded = base64.b64encode(img_file.read()).decode()
-#     return encoded
+# footer
+import streamlit as st
 
-# # 圖片路徑
-# logo1_path = r"logo/成大_白色垂直.jpg"
-# logo2_path = r"logo/實驗室_白色方形.jpg"
-
-# # 轉 base64
-# logo1_base64 = get_image_base64(logo1_path)
-# logo2_base64 = get_image_base64(logo2_path)
-
-# # 插入名字與兩張 logo（疊在右下角，文字置中 & 放大）
-# st.markdown(f"""
-#     <style>
-#     .logo-wrapper {{
-#         position: fixed;
-#         bottom: 20px;
-#         right: 20px;
-#         display: flex;
-#         flex-direction: column;
-#         gap: 0px;
-#         z-index: 1000;
-#         align-items: center;
-#         font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif !important;
-#     }}
-#     .logo-names {{
-#         text-align: center;
-#         font-size: 15px;
-#         color: #666666;  /* 改深一點 */
-#         line-height: 1.5;
-#         margin-bottom: 12px;
-#     }}
-#     .logo-names .title {{
-#         font-size: 18px;
-#         font-weight: bold;
-#         color: #444444;  /* 標題再深一點 */
-#         margin-top: 6px;
-#         margin-bottom: 4px;
-#     }}
-#     .logo-img {{
-#         width: 80px;
-#         opacity: 0.95;
-#     }}
-#     </style>
-#         <img class="logo-img" src="data:image/jpg;base64,{logo1_base64}">
-#         <img class="logo-img" src="data:image/jpg;base64,{logo2_base64}"><br><br>
-#     </div>
-# """, unsafe_allow_html=True)
-
-# Footer：版權、聯絡方式、指導老師與 Logo
-def get_image_base64(path):
-    with open(path, "rb") as img_file:
-        encoded = base64.b64encode(img_file.read()).decode()
-    return encoded
-
-# 圖片轉 base64
-logo1_base64 = get_image_base64("logo/成大_白色垂直.jpg")
-logo2_base64 = get_image_base64("logo/實驗室_白色方形.jpg")
-
-st.markdown("""
+st.markdown(f"""
     <hr style="margin-top: 40px; margin-bottom: 10px; border: none; border-top: 1px solid #ccc;" />
 
     <div style="text-align: center; font-size: 13px; color: #666; font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;">
         <p style="margin-bottom: 4px;">
             © 2025 許家瑋<br>
-            聯絡信箱：<a href="mailto:p68111509@gs.ncku.edu.tw">p68111509@gs.ncku.edu.tw</a>
         </p>
-        <p style="margin-top: 6px; margin-bottom: 0px;">
-            本系統資料與分析目的僅供學術與教育參考，部分 PM2.5 空間資訊參考自環境部公開資料。
+        <p style="margin-top: 6px; margin-bottom: 10px;">
+            部分 PM2.5 空間資訊參考自環境部公開資料。
         </p>
-        <p style="margin-top: 8px; font-size: 12px; color: #999;">
+        <p style="font-size: 12px; color: #888; margin-top: 0px;">
             本系統僅供展示與研究用途，禁止未經授權之下載、修改、或商業使用。<br>
             所有原始碼、資料與介面設計，皆為作者智慧財產，保留所有權利。
         </p>
     </div>
 """, unsafe_allow_html=True)
-
-# © 2025 許家瑋 林侑萱 林宇家｜國立成功大學 測量及空間資訊學系｜指導老師：吳治達 教授
