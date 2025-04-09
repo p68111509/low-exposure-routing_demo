@@ -630,7 +630,7 @@ st.markdown(f"""
 
     <div style="text-align: center; font-size: 13px; color: #666; font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;">
         <p style="margin-bottom: 4px;">
-            © 2025 許家瑋<br>
+            © 2025<br>
         </p>
         <p style="margin-top: 6px; margin-bottom: 10px;">
             部分空氣汙染空間資訊參考自環境部公開資料
