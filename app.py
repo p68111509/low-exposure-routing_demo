@@ -633,7 +633,7 @@ st.markdown(f"""
             © 2025 許家瑋<br>
         </p>
         <p style="margin-top: 6px; margin-bottom: 10px;">
-            部分 PM2.5 空間資訊參考自環境部公開資料。
+            部分空氣汙染空間資訊參考自環境部公開資料
         </p>
         <p style="font-size: 12px; color: #888; margin-top: 0px;">
             本系統僅供展示與研究用途，禁止未經授權之下載、修改、或商業使用。<br>
