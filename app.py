@@ -637,7 +637,6 @@ st.markdown(f"""
         </p>
         <p style="font-size: 12px; color: #888; margin-top: 0px;">
             本系統僅供展示與研究用途，禁止未經授權之下載、修改、或商業使用。<br>
-            所有原始碼、資料與介面設計，皆為作者智慧財產，保留所有權利。
         </p>
     </div>
 """, unsafe_allow_html=True)
