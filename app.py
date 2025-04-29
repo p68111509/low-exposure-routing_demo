@@ -171,16 +171,25 @@ with col1:
     if "nodes" not in st.session_state: st.session_state.nodes = []
 
 
+    # 設定CSS來改變底色
+    st.markdown("""
+        <style>
+            .start-address input {
+                background-color: #d03c29;
+            }
+        </style>
+    """, unsafe_allow_html=True)
+
     # 地址輸入框
     row1 = st.columns([1, 1])
     with row1[0]:
         if "set_start_address" in st.session_state:
             st.session_state.start_address = st.session_state.pop("set_start_address")
-        start_address = st.text_input(label="", placeholder="起點地址", key="start_address")
+        start_address = st.text_input(label="", placeholder="🟢起點地址", key="start_address")
     with row1[1]:
         if "set_end_address" in st.session_state:
             st.session_state.end_address = st.session_state.pop("set_end_address")
-        end_address = st.text_input(label="", placeholder="終點地址", key="end_address")
+        end_address = st.text_input(label="", placeholder="🔴終點地址", key="end_address")
 
     # 按鈕
     row2 = st.columns([1, 1, 1, 1])
@@ -526,8 +535,8 @@ with col3:
         # 圖例：不可點擊的樣式展示（縮小空白）
         st.markdown("""
             <div class="legend-wrapper">
-                <div class="legend-label">🟠<br>低暴路徑</div>
-                <div class="legend-label">🔵<br>最短路徑</div>
+                <div class="legend-label">🟩<br>低暴路徑</div>
+                <div class="legend-label">🟦<br>最短路徑</div>
             </div>
         """, unsafe_allow_html=True)
 
@@ -547,7 +556,7 @@ with col3:
         if st.session_state.has_routed and len(st.session_state.nodes) == 2:
             for path, color, label in [
                 (compute_path(G, *st.session_state.nodes, "length")[0], "blue", "最短路徑"),
-                (compute_path(G, *st.session_state.nodes, "exposure")[0], "orange", "最低暴露路徑")
+                (compute_path(G, *st.session_state.nodes, "exposure")[0], "#00d26a", "最低暴露路徑")
             ]:
                 for u, v in zip(path[:-1], path[1:]):
                     edge_data = G.get_edge_data(u, v)
@@ -620,8 +629,6 @@ with col3:
             else:
                 st.warning("⚠️ 點的位置離路網太遠，請靠近道路再試一次。")
 
-
-
 # footer
 import streamlit as st
 
@@ -630,13 +637,17 @@ st.markdown(f"""
 
     <div style="text-align: center; font-size: 13px; color: #666; font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;">
         <p style="margin-bottom: 4px;">
-            © 2025<br>
+            © 2025
         </p>
         <p style="margin-top: 6px; margin-bottom: 10px;">
             部分空氣汙染空間資訊參考自環境部公開資料
         </p>
         <p style="font-size: 12px; color: #888; margin-top: 0px;">
             本系統僅供展示與研究用途，禁止未經授權之下載、修改、或商業使用。<br>
+            所有原始碼、資料與介面設計，皆為作者智慧財產，保留所有權利。
         </p>
     </div>
 """, unsafe_allow_html=True)
+
+#  © 2025 許家瑋 林祐如｜國立成功大學 測量及空間資訊學系｜指導老師：吳治達 教授
+# 聯絡信箱：<a href="mailto:p68111509@gs.ncku.edu.tw">p68111509@gs.ncku.edu.tw</a>｜GitHub 專案： <a href="https://github.com/p68111509/low-exposure-routing_demo" target="_blank">low-exposure-routing_demo</a>
